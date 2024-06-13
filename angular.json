@@ -37,6 +37,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -60,7 +61,13 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -104,5 +111,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "02316f32-af96-40f3-87da-38ccca5a819f"
   }
 }

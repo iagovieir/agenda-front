@@ -1,0 +1,18 @@
+<h2>Contatos</h2>
+<hr/>
+
+<button type="button" class="btn btn-primary mb-2" [routerLink]="['new']">
+  Novo Contato
+</button>
+
+<div class="nac">
+  <div class="card mt-3" style="width: 18rem;" *ngFor="let contacts of contacts">
+      <div class="card-body">
+        <h5 class="card-title" [innerHTML]="contacts.name"></h5>
+        <p [innerHTML]="contacts.number" class="card-text"></p>
+        <button class="btn btn-primary" [routerLink]="['edit', contacts.id]">Editar</button>
+        <button class="btn btn-danger ms-3" [routerLink]="['remove', contacts.id]" >Excluir</button>
+      </div>
+  </div>
+</div>
+
